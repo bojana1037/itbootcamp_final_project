@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import java.time.Duration;
 
 public abstract class Basic_Test {
-    private WebDriver driver;
+    protected WebDriver driver;
     protected String basedUrl = "https://vue-demo.daniel-avellaneda.com";
     protected Login_Page login_page;
     protected Nav_Page nav_page;
@@ -24,9 +24,13 @@ public abstract class Basic_Test {
     public void beforeClass() {
         System.setProperty("webdriver.chrome.driver",
                 "src/main/resources/chromedriver.exe");
+
         driver = new ChromeDriver();
+
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().window().maximize();
+
         login_page = new Login_Page(driver);
         nav_page = new Nav_Page(driver);
         sign_up_page = new Sign_Up_Page(driver);

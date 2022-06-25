@@ -24,7 +24,6 @@ public class Nav_Page {
         return driver.findElement(By.id("list-item-73"));
     }
 
-
     public WebElement getLogoutButton() {
         return driver.findElement(By.className("btnLogout"));
 
@@ -35,6 +34,14 @@ public class Nav_Page {
 
 
     }
+
+    public WebElement getAdminButton (){
+        return driver.findElement(By.className("btnAdmin"));
+    }
+    public WebElement getCitiesButton() {
+        return this.driver.findElement(By.className("btnAdminCities"));
+    }
+
 }
 
 

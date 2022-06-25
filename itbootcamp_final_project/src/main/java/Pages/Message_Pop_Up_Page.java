@@ -17,16 +17,26 @@ public class Message_Pop_Up_Page {
 
     public void waitForPopUpToBeVisible() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("v-snack__content")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//div[contains(@class, 'v-snack__content')]")));
+
+    }
+
+
+    public void waitForMessageSuccessfullySaveCity() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("success")));
     }
 
     public WebElement getTextMessageFromPopUp() {
-        return driver.findElement(By.xpath("//div[contains (@class, 'v-snack__content')]/ul/li"));
+        return driver.findElement(By.xpath("//*[@class = 'v-snack__content')]/ul/li"));
     }
 
-    public WebElement getCloseButtonFromPopUp() {
-        return driver.findElement(By.xpath("//div[contains (@class, 'v-snack__content')]/button"));
+    public WebElement getMessageTextSuccessfullySaveCity() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        return driver.findElement(By.className("success"));
     }
+
 
     public void waitForVerifyAccountPopUp() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
@@ -44,3 +54,4 @@ public class Message_Pop_Up_Page {
         return driver.findElement(By.className("btnClose"));
     }
 }
+

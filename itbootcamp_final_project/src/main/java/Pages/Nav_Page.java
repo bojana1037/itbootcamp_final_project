@@ -41,7 +41,23 @@ public class Nav_Page {
     public WebElement getCitiesButton() {
         return this.driver.findElement(By.className("btnAdminCities"));
     }
+    public WebElement getSpanishLanguageButton() {
+        return driver.findElement(
+                By.className("btnES"));
 
+    }
+    public WebElement getChineseLanguageButton() {
+        return driver.findElement(
+                By.className("btnCN"));
+
+    }
+    public WebElement getFrenchLanguageButton() {
+        return driver.findElement(
+                By.className("btnFR"));
+
+    }
+    public WebElement getHeader(){
+        return driver.findElement(By.tagName("h1"));
+    }
 }
-
 

@@ -18,7 +18,7 @@ public class Login_Test extends Basic_Test {
 
         Assert.assertTrue(driver.getCurrentUrl().contains("/login"),
                 "[ERROR] URL does not contains '/login' route");
-        
+
     }
 
     @Test(priority = 20)
@@ -46,7 +46,7 @@ public class Login_Test extends Basic_Test {
         message_pop_up_page.waitForPopUpToBeVisible();
 
         Assert.assertEquals(message_pop_up_page
-                        .getMessageTextFromPopUp().getText(),
+                        .getTextMessageFromPopUp().getText(),
                 "User does not exists",
                 "[ERROR] Pop up message does not contain 'User does not exists' text");
 
@@ -70,7 +70,7 @@ public class Login_Test extends Basic_Test {
         message_pop_up_page.waitForPopUpToBeVisible();
 
         Assert.assertEquals(
-                message_pop_up_page.getMessageTextFromPopUp().getText(),
+                message_pop_up_page.getTextMessageFromPopUp().getText(),
                 "Wrong password",
                 "[ERROR] Message does not contains text-Wrong password");
 
